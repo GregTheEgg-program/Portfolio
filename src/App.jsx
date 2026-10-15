@@ -223,7 +223,7 @@ export default function App() {
             <a href={'mailto:' + profile.email}>{profile.email} <span aria-hidden="true">↗</span></a>
             <ExternalLink href={profile.linkedin}>Connect on LinkedIn</ExternalLink>
             <ExternalLink href={profile.github}>Explore my GitHub</ExternalLink>
-            <a href={media(profile.resume)} download={profile.resume}>Download my résumé <span aria-hidden="true">↓</span></a>
+            <a href={media(profile.resume)} download={profile.resume}>Download my resume <span aria-hidden="true">↓</span></a>
           </div>
         </section>
       </main>
