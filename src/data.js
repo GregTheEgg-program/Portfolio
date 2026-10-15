@@ -13,9 +13,9 @@ export const profile = {
   availability: 'Seeking a Summer 2027 internship',
   introduction: 'I’m an RTIS student at DigiPen building gameplay, physics, and the engine systems that turn ideas into playable experiences.',
   about: [
-    'I enjoy working where gameplay and engine programming meet: building reusable systems, giving designers useful tools, and turning an idea into something a player can interact with.',
-    'My projects range from custom C and C++ engines to team games in Unity and Unreal Engine 5. I’ve worked alongside programmers, artists, sound designers, and game designers to bring both systems and gameplay together.',
-    'My first finished team project was Up We Goat, a two-week DigiPen Pre-College game. Since then, I’ve continued building collaborative projects at DigiPen, with a growing focus on gameplay, physics, and engine tools.',
+    'Ive been programming since elementary school, not because its easy, but because it challenges me. Every project has a goal, and every goal has obstacles I must conquer...',
+    'My projects range from custom C and C++ engines to team games in Unity and Unreal Engine 5. I’ve worked alongside programmers, artists, sound designers, and game designers to create games that youll love!',
+    'My first finished team project was Up We Goat, a two-week DigiPen Pre-College game which you can read about here! Since then, I’ve continued building projects at DigiPen, with a growing focus on custom engines and Unreal.',
   ],
 };
 
