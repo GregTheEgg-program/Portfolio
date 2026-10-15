@@ -5,7 +5,6 @@ The portfolio is usable as supplied. These details would make it more complete:
 - **Spark gameplay media and links:** gameplay screenshots/trailers and any playable or source links for Surfing Poseidon and The Tower. Both now have the supplied thumbnail artwork; their names, premises, three-person teams, engines, and Gregory’s contributions are included under GAM 300.
 - **Game links:** the DigiPen page for Gamblers Never Quit, plus any public build, trailer hosting, or repository for Goblin Man. Add these in `src/data.js`; empty links are not rendered.
 - **Project timelines:** confirmed project dates and the development time for each Spark. The supplied public email is active, and expected graduation is listed as May 2028.
-- **More gameplay media:** gameplay screenshots or video for Up We Goat and Rock, Paper, City would strengthen their project breakdowns. Their supplied thumbnail artwork is now shown on the cards.
 - **Performance evidence:** hardware, resolution, particle count, and frame-time/FPS measurements for the 10,000-particle statement. The current wording describes a target, not a measured guarantee, and the browser illustration is not an engine benchmark.
 - **Team credits:** full surnames and optional portfolio links for teammates. Existing first names and initials are preserved as supplied.
 - **Accessibility:** trailer captions or a transcript would make the original videos more accessible.
@@ -24,10 +23,12 @@ The portfolio is usable as supplied. These details would make it more complete:
 - Adapted only the screenshot layout: a wide framed navigation bar, left introduction/right portrait, horizontal gallery with two desktop cards, and three panels for skills, background, and about. The palette remains primarily black with purple and blue accents.
 - The reference screenshots are not bundled, rendered on the page, or used for content. No biography, job titles, employers, skills, project descriptions, or project images from the reference portfolio were imported.
 - All six current project cards use the supplied thumbnail PNGs. A mechanic-overview fallback remains available for future projects without images; the original trailer posters are kept separately.
+- Up We Goat and Rock, Paper, City now include their supplied trailers in their respective project details. The videos retain the original H.264/AAC streams, with MP4 metadata moved to the front for progressive playback; the existing game thumbnails remain unchanged.
+- The current master résumé PDF is included unchanged and is downloadable as the fourth link in the bottom contact section, after email, LinkedIn, and GitHub. The older tutor-application résumé is not bundled.
 
 ## Sources and limits
 
-Primary sources: the attached `Pasted text.txt`, updated `Pasted text(1).txt`, Gregory’s original five media files, and the six newly supplied game thumbnails. The two reference screenshots were used only to understand layout. Existing GitHub/LinkedIn links, RTIS education, language/tool lists, and internship availability were retained from the prior website and supplied conversation. The previous version documented public profile retrieval; LinkedIn’s full profile remained inaccessible.
+Primary sources: the attached `Pasted text.txt`, updated `Pasted text(1).txt`, Gregory’s original five media files, the six supplied game thumbnails, `upwegoat.mp4`, `rockpapercty.mp4`, and `Gregory-Sherris-Master-Resume.pdf`. The two reference screenshots were used only to understand layout. Existing GitHub/LinkedIn links, RTIS education, language/tool lists, and internship availability were retained from the prior website and supplied conversation. The previous version documented public profile retrieval; LinkedIn’s full profile remained inaccessible.
 
 The public Up We Goat repository’s `Assets`, `Packages`, and `ProjectSettings` directories were also checked through GitHub to confirm the Unity project structure.
 

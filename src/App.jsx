@@ -45,7 +45,15 @@ export function ProjectDialog({ project, onClose }) {
             {project.duration && <div><dt>Development</dt><dd>{project.duration}</dd></div>}
             <div><dt>Built with</dt><dd>{project.stack.join(' / ')}</dd></div>
           </dl>
-          {project.trailer && <figure className="project-trailer"><video controls playsInline preload="none" poster={media(project.poster || project.image)} aria-label={project.trailerLabel}><source src={media(project.trailer)} type="video/mp4" />Your browser does not support embedded video. <a href={media(project.trailer)}>Open the trailer</a>.</video><figcaption>Original team trailer · {project.trailerLabel.split(', ')[1]}</figcaption></figure>}
+          {project.trailer && (
+            <figure className="project-trailer">
+              <video controls playsInline preload="none" poster={media(project.poster || project.image)} aria-label={project.trailerLabel}>
+                <source src={media(project.trailer)} type="video/mp4" />
+                Your browser does not support embedded video. <a href={media(project.trailer)}>Open the trailer</a>.
+              </video>
+              <figcaption>Original team trailer{project.trailerDuration && <> · {project.trailerDuration}</>}</figcaption>
+            </figure>
+          )}
           <div className="dialog-contributions"><h3>What I contributed</h3>{project.highlights.map((item) => <section key={item.title}><h4>{item.title}</h4><p>{item.text}</p></section>)}</div>
           {project.id === 'goblin-man' && (
             <section className="project-demos" aria-labelledby="goblin-man-demos-title">
@@ -215,6 +223,7 @@ export default function App() {
             <a href={'mailto:' + profile.email}>{profile.email} <span aria-hidden="true">↗</span></a>
             <ExternalLink href={profile.linkedin}>Connect on LinkedIn</ExternalLink>
             <ExternalLink href={profile.github}>Explore my GitHub</ExternalLink>
+            <a href={media(profile.resume)} download={profile.resume}>Download my résumé <span aria-hidden="true">↓</span></a>
           </div>
         </section>
       </main>

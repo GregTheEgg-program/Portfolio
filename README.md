@@ -1,6 +1,6 @@
 # Gregory Sherris — React Portfolio
 
-A standalone React + Vite portfolio with black backgrounds, white text, purple/blue accents, and a portrait on the opening screen. The screenshot-inspired layout includes a framed navigation bar, horizontal project gallery with six supplied game thumbnails, three information panels, six project breakdowns, two trailers, and code excerpts.
+A standalone React + Vite portfolio with black backgrounds, white text, purple/blue accents, and a portrait on the opening screen. The screenshot-inspired layout includes a framed navigation bar, horizontal project gallery with six supplied game thumbnails, three information panels, six project breakdowns, four trailers, code excerpts, and a downloadable résumé.
 
 ## Run locally
 
@@ -34,11 +34,13 @@ Vite generates the static site in `dist/`. The included `base: './'` supports de
 | `src/styles.css` | Shared styles for components and dialogs |
 | `src/layout.css` | Framed navigation, hero, gallery, three-panel layout, and responsive overrides |
 | `src/bonkera.css` | Top-down grow/rotate/shrink stomp animation and project-demo layout |
-| `public/media/` | Photograph, trailers, posters, and sprites |
+| `public/media/` | Photograph, trailers, posters, sprites, and the current résumé PDF |
 | `index.html` | Page title and search description |
 | `CONTENT-NOTES.md` | Missing details, editorial decisions, and verification limits |
 
 The email address and expected graduation date are configured in `src/data.js`. Add playable/source URLs to the relevant project to enable those links; leave them empty when unavailable.
+
+The fourth link in the bottom contact section downloads `Gregory-Sherris-Master-Resume.pdf`, below email, LinkedIn, and GitHub. The supplied master résumé is included unchanged; update `profile.resume` and the corresponding file in `public/media/` when replacing it.
 
 The gallery shows two cards at a time on desktop and one on mobile, with arrow controls and native scrolling. Use **View all projects** for a full grid, and filter by custom engines, Unity, or Unreal; filter counts update automatically when you add projects.
 
@@ -56,6 +58,8 @@ All six thumbnails use the supplied PNGs, matched to their project names, with `
 - **Rock, Paper, City:** enemy AI, combat, and attack combinations.
 - **Surfing Poseidon — Spark 01:** Unity player movement, tricks, slow-motion quick-time events, and the style meter.
 - **The Tower — Spark 02:** Unreal Engine 5 block dropping, custom blocks, scoring, and UI, primarily through Blueprints with some C++.
+
+Goblin Man, Gamblers Never Quit, Up We Goat, and Rock, Paper, City have embedded trailers in their project details. The two newly supplied MP4s retain their original video/audio streams and are prepared for progressive web playback without re-encoding.
 
 Both Sparks are listed under GAM 300, following the updated project notes. Add a future GAM 300/350 project to the `projects` array in `src/data.js`; its position in the array determines its gallery position.
 

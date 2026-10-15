@@ -9,12 +9,16 @@ export const profile = {
   email: 'gregsherris@gmail.com',
   graduation: 'May 2028',
   portrait: 'gregory-sherris.jpeg',
+  resume: 'Gregory-Sherris-Master-Resume.pdf',
   availability: 'Seeking a Summer 2027 internship',
   introduction: 'I’m an RTIS student at DigiPen building gameplay, physics, and the engine systems that turn ideas into playable experiences.',
   about: [
     'Ive been programming since elementary school, not because its easy, but because it challenges me. Every project has a goal, and every goal has obstacles I must conquer...',
     'My projects range from custom C and C++ engines to team games in Unity and Unreal Engine 5. I’ve worked alongside programmers, artists, sound designers, and game designers to create games that youll love!',
     'My first finished team project was Up We Goat, a two-week DigiPen Pre-College game which you can read about here! Since then, I’ve continued building projects at DigiPen, with a growing focus on custom engines and Unreal.',
+    'I enjoy working where gameplay and engine programming meet: building reusable systems, giving designers useful tools, and turning an idea into something a player can interact with.',
+    'My projects range from custom C and C++ engines to team games in Unity and Unreal Engine 5. I’ve worked alongside programmers, artists, sound designers, and game designers to bring both systems and gameplay together.',
+    'My first finished team project was Up We Goat, a two-week DigiPen Pre-College game. Since then, I’ve continued building collaborative projects at DigiPen, with a growing focus on gameplay, physics, and engine tools.',
   ],
 };
 
@@ -33,7 +37,7 @@ export const projects = [
     image: 'GoblinManLogo.png', imageWidth: 364, imageHeight: 364,
     imageAlt: 'Goblin Man game thumbnail',
     poster: 'goblin-man-poster.jpg',
-    trailer: 'goblin-man-trailer.mp4', trailerLabel: 'Goblin Man trailer, 45 seconds',
+    trailer: 'goblin-man-trailer.mp4', trailerLabel: 'Goblin Man trailer, 45 seconds', trailerDuration: '45 seconds',
     summary: 'Guide a remarkably resilient goblin and his much more fragile Goblittles out of a cave filled with crushing hazards.',
     contribution: 'I built collision and transform systems, a customizable particle system, enemy behavior, and tools for creating gameplay.',
     introduction: 'Goblin Man is a game about protecting a group of Goblittles as they make their way out of a dangerous cave. Their guardian can survive a lot more than they can, so moving safely through each obstacle is essential.',
@@ -57,7 +61,7 @@ export const projects = [
     image: 'GamblersNeverQuit.png', imageWidth: 823, imageHeight: 798,
     imageAlt: 'Gamblers Never Quit game thumbnail',
     poster: 'gamblers-never-quit-poster.jpg',
-    trailer: 'gamblers-never-quit-trailer.mp4', trailerLabel: 'Gamblers Never Quit trailer, 32 seconds',
+    trailer: 'gamblers-never-quit-trailer.mp4', trailerLabel: 'Gamblers Never Quit trailer, 32 seconds', trailerDuration: '32 seconds',
     playUrl: '', // Add the DigiPen game page when available.
     summary: 'An incremental game built around casino-style minigames: earn more, raise the stakes, and see how far your score can go.',
     contribution: 'I developed the action list system and the slots scene in a custom C engine.',
@@ -108,6 +112,8 @@ export const projects = [
   },
   {
     id: 'up-we-goat', title: 'Up We Goat', category: 'unity',
+    trailer: 'up-we-goat-trailer.mp4',
+    trailerLabel: 'Up We Goat trailer, 1 minute 42 seconds', trailerDuration: '1 minute 42 seconds',
     image: 'UpWeGoatLogo.png', imageWidth: 233, imageHeight: 239,
     imageAlt: 'Up We Goat game thumbnail',
     course: 'DigiPen Pre-College', type: 'Team game',
@@ -125,6 +131,8 @@ export const projects = [
   },
   {
     id: 'rock-paper-city', title: 'Rock, Paper, City', category: 'unity',
+    trailer: 'rock-paper-city-trailer.mp4',
+    trailerLabel: 'Rock, Paper, City trailer, 1 minute 23 seconds', trailerDuration: '1 minute 23 seconds',
     image: 'RockPaperCityLogo.png', imageWidth: 1641, imageHeight: 780,
     imageAlt: 'Rock, Paper, City game thumbnail',
     course: 'Team project', type: 'Unity game',
