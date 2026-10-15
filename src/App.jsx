@@ -45,8 +45,15 @@ export function ProjectDialog({ project, onClose }) {
             {project.duration && <div><dt>Development</dt><dd>{project.duration}</dd></div>}
             <div><dt>Built with</dt><dd>{project.stack.join(' / ')}</dd></div>
           </dl>
-          {project.trailer && <figure className="project-trailer"><video controls playsInline preload="none" poster={media(project.image)} aria-label={project.trailerLabel}><source src={media(project.trailer)} type="video/mp4" />Your browser does not support embedded video. <a href={media(project.trailer)}>Open the trailer</a>.</video><figcaption>Original team trailer · {project.trailerLabel.split(', ')[1]}</figcaption></figure>}
+          {project.trailer && <figure className="project-trailer"><video controls playsInline preload="none" poster={media(project.poster || project.image)} aria-label={project.trailerLabel}><source src={media(project.trailer)} type="video/mp4" />Your browser does not support embedded video. <a href={media(project.trailer)}>Open the trailer</a>.</video><figcaption>Original team trailer · {project.trailerLabel.split(', ')[1]}</figcaption></figure>}
           <div className="dialog-contributions"><h3>What I contributed</h3>{project.highlights.map((item) => <section key={item.title}><h4>{item.title}</h4><p>{item.text}</p></section>)}</div>
+          {project.id === 'goblin-man' && (
+            <section className="project-demos" aria-labelledby="goblin-man-demos-title">
+              <h3 id="goblin-man-demos-title">See the systems in motion</h3>
+              <p className="muted">Interactive browser recreations of my particle system and Bonkera behavior.</p>
+              <div className="demo-grid"><ParticleDemo /><BonkeraDemo /></div>
+            </section>
+          )}
           {!!project.code.length && <section className="dialog-code"><h3>A closer look at the code</h3><p className="muted">Selected excerpts from my implementation.</p>{project.code.map((key) => <CodeSample key={key} snippet={snippets[key]} />)}</section>}
           {project.teams && <details className="team-details"><summary>Team credits</summary>{project.teams.map((team) => <p key={team.label}><strong>{team.label}</strong>{team.people}</p>)}</details>}
           <div className="dialog-links">
@@ -195,25 +202,6 @@ export default function App() {
                 <ExternalLink href={profile.linkedin} className="text-link">Connect on LinkedIn</ExternalLink>
               </div>
             </article>
-          </div>
-        </section>
-
-        <section id="systems" className="systems-section" aria-labelledby="systems-title">
-          <div className="container section">
-            <div className="section-heading">
-              <div>
-                <p className="eyebrow">UNDER THE HOOD</p>
-                <h2 id="systems-title">A closer look at <span>my systems.</span></h2>
-              </div>
-              <p>Two ideas from Goblin Man,<br className="desktop-break" /> recreated for the browser.</p>
-            </div>
-            <div className="demo-grid"><ParticleDemo /><BonkeraDemo /></div>
-            <div className="systems-footer">
-              <p>Explore the C++ excerpts and my engine contributions in the project breakdown.</p>
-              <button type="button" className="text-link" onClick={() => setActiveProject(projects[0])}>
-                Inside Goblin Man <span aria-hidden="true">↗</span>
-              </button>
-            </div>
           </div>
         </section>
 

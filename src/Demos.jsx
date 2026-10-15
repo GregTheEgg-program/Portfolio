@@ -98,7 +98,7 @@ export function ParticleDemo() {
   return (
     <article className="demo-card">
       <div className="demo-heading">
-        <div><span className="eyebrow">01 / PARTICLE SYSTEMS</span><h3>A little controlled chaos.</h3></div>
+        <div><span className="eyebrow">01 / PARTICLE SYSTEMS</span><h4>A little controlled chaos.</h4></div>
         <button type="button" className="quiet-button" aria-label={paused ? 'Play particle animation' : 'Pause particle animation'} onClick={() => setPaused(!paused)}>{paused ? 'Play' : 'Pause'}</button>
       </div>
       <div className="particle-stage">
@@ -124,23 +124,23 @@ export function BonkeraDemo() {
   return (
     <article className="demo-card">
       <div className="demo-heading">
-        <div><span className="eyebrow">02 / ENEMY BEHAVIOR</span><h3>Meet the Bonkera.</h3></div>
+        <div><span className="eyebrow">02 / ENEMY BEHAVIOR</span><h4>Meet the Bonkera.</h4></div>
         <button type="button" className="quiet-button" aria-label={paused ? 'Play Bonkera animation' : 'Pause Bonkera animation'} onClick={() => setPaused(!paused)}>{paused ? 'Play' : 'Pause'}</button>
       </div>
-      <div key={cycle} className={`bonkera-stage ${paused ? 'is-paused' : ''}`} role="img" aria-label="Looping scene: a Goblittle walks beneath a translucent Bonkera mushroom, which rises, stalls, and slams down, squashing the Goblittle.">
-        <div className="cave-light" aria-hidden="true" />
-        <span className="stage-label">GOBLIN MAN / BEHAVIOR STUDY</span>
+      <div key={cycle} className={`bonkera-stage ${paused ? 'is-paused' : ''}`} role="img" aria-label="Top-down looping scene: the Bonkera stays centered, grows and turns as it rises, then rapidly shrinks to stomp a Goblittle walking underneath it.">
+        <span className="stage-label">TOP-DOWN / SCALE + ROTATION</span>
+        <div className="goblittle-path" aria-hidden="true" />
+        <div className="bonkera-footprint" aria-hidden="true" />
         <div className="bonkera-shadow" aria-hidden="true" />
         <img className="bonkera-sprite" src={media('bonkera.png')} alt="" width="32" height="32" />
         <div className="goblittle-runner" aria-hidden="true"><img src={media(paused ? 'goblittle-still.png' : 'goblittle-running.gif')} alt="" width="16" height="16" /></div>
         <div className="impact-ring" aria-hidden="true" />
-        <div className="cave-floor" aria-hidden="true" />
       </div>
       <div className="bonkera-controls">
         <ol className="state-cycle" aria-label="Enemy state sequence"><li>Rest</li><li>Climb</li><li>Stall</li><li>Fall</li></ol>
         <button type="button" className="quiet-button" onClick={() => { setCycle(cycle + 1); setPaused(false); }}>Replay ↻</button>
       </div>
-      <p className="demo-caption">The Bonkera fades as the Goblittle passes underneath, then slams and squashes it. This looping browser recreation uses the original sprites and illustrates the state cycle in my C++ behavior.</p>
+      <p className="demo-caption">Seen from above: the Bonkera grows and turns to rise, pauses, then rapidly shrinks to stomp. Its center stays fixed, and it fades so you can see the Goblittle pass underneath and get squashed. This browser recreation uses the original sprites.</p>
     </article>
   );
 }

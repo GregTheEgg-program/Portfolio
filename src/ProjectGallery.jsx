@@ -21,8 +21,8 @@ function ProjectCard({ project, index, onOpen }) {
           <img
             src={media(project.image)}
             alt={project.imageAlt}
-            width="1280"
-            height="720"
+            width={project.imageWidth || 1280}
+            height={project.imageHeight || 720}
             loading="lazy"
           />
         ) : (

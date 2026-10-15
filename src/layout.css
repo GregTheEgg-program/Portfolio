@@ -325,6 +325,12 @@
   width: 100%;
   height: 100%;
   aspect-ratio: auto;
+  object-fit: contain;
+  padding: 14px;
+  background: #050408;
+}
+.project-image-button::after {
+  background: none;
 }
 .project-number {
   position: absolute;
