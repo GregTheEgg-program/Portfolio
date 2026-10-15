@@ -1,49 +1,61 @@
 # Gregory Sherris — React Portfolio
 
-A standalone React + Vite portfolio with a black background, white text, and blue/purple accents. No logos, monograms, branded icons, or initials graphics are included.
+A standalone React + Vite portfolio with black backgrounds, white text, purple/blue accents, and a portrait on the opening screen. The screenshot-inspired layout includes a framed navigation bar, horizontal project gallery, three information panels, six project breakdowns, two trailers, code excerpts, and the particle/Bonkera demos.
 
 ## Run locally
 
-Install Node.js 22.12+ (or Node.js 20.19+), open a terminal in this folder, and run:
+Use Node.js 22.12+ (or 20.19+). Open a terminal in this folder:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open the local URL printed by Vite, usually `http://localhost:5173`.
+Open the local URL printed by Vite. The site needs a local server; opening `index.html` directly will not run React.
 
-## Build
+## Production build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-The production files are generated in `dist/`. This is a static frontend; no backend, credentials, or hosting account is required.
+Vite generates the static site in `dist/`. The included `base: './'` supports deployment in a subdirectory, and all media is bundled locally.
 
-## Edit
+## Edit the site
 
-- `src/content.js`: biography, profile links, project descriptions, and skills.
-- `src/App.jsx`: React components and page structure.
-- `src/styles.css`: colors, typography, layout, and mobile styles.
-- `index.html`: page title and description.
+| File | Purpose |
+| --- | --- |
+| `src/data.js` | Biography, project descriptions, links, team credits, skills, and code samples |
+| `src/App.jsx` | Navigation, portrait hero, information panels, native project dialogs, and page structure |
+| `src/ProjectGallery.jsx` | Six project cards, engine filters, carousel arrows, and the all-projects grid |
+| `src/Demos.jsx` | Particle controls and Bonkera animation |
+| `src/particleEngine.js` | Bounded reusable particle pool for the browser illustration |
+| `src/styles.css` | Shared styles for components, dialogs, and enemy animation |
+| `src/layout.css` | Framed navigation, hero, gallery, three-panel layout, and responsive overrides |
+| `public/media/` | Photograph, trailers, posters, and sprites |
+| `index.html` | Page title and search description |
+| `CONTENT-NOTES.md` | Missing details, editorial decisions, and verification limits |
 
-Google Fonts are optional; local system fonts are used when unavailable.
+The email address and expected graduation date are configured in `src/data.js`. Add playable/source URLs to the relevant project to enable those links; leave them empty when unavailable.
 
-## Content sources
+The gallery shows two cards at a time on desktop and one on mobile, with arrow controls and native scrolling. Use **View all projects** for a full grid, and filter by custom engines, Unity, or Unreal; filter counts update automatically when you add projects.
 
-Content was gathered on October 13, 2026 from these sources, rather than the previously supplied résumé:
+The demonstrations have pause controls and start paused when reduced motion is preferred. Project dialogs use native keyboard focus management and close with Escape, the Close button, or a click outside the panel. Videos play only when a visitor presses play.
 
-- [GitHub profile README](https://github.com/GregTheEgg-program/GregTheEgg-program/blob/main/README.md): DigiPen RTIS studies, game development, cybersecurity interest, internship search, and Perforce use.
-- [LinkedIn profile](https://www.linkedin.com/in/gregory-sherris-computerscience/): publicly indexed headline and snippets identifying RTIS studies, a Summer 2027 internship search, C++/Java/Python skills, and a small business internship.
-- [RPS repository](https://github.com/GregTheEgg-program/RPS): Unity project structure and 2024 repository history.
-- [enemyScript.cs](https://github.com/GregTheEgg-program/RPS/blob/main/Assets/Scripts/enemyScript.cs): combat results, health, combos, opponent decisions, countdowns, and scene transitions.
-- [Interact.cs](https://github.com/GregTheEgg-program/RPS/blob/main/Assets/Scripts/Interact.cs): move selection, sprite changes, health UI, and audio feedback.
-- [Exposition.cs](https://github.com/GregTheEgg-program/RPS/blob/main/Assets/Scripts/Exposition.cs): Chronobridge story setting.
+## Included projects
 
-LinkedIn rejected direct access, so only its publicly indexed information was used. Detailed employment dates, company names, additional coursework, and other unavailable profile sections were not inferred. Its older indexed About snippet mentions a previous program; the current RTIS headline is corroborated by the GitHub profile README.
+- **Goblin Man:** custom C++ engine, collision and transforms, particles, enemy behavior, ImGui, and development tools.
+- **Gamblers Never Quit:** custom C engine, time-based action lists, and the slots minigame.
+- **Up We Goat:** obstacles, platforms, particles, and the first finished team project.
+- **Rock, Paper, City:** enemy AI, combat, and attack combinations.
+- **Surfing Poseidon — Spark 01:** Unity player movement, tricks, slow-motion quick-time events, and the style meter.
+- **The Tower — Spark 02:** Unreal Engine 5 block dropping, custom blocks, scoring, and UI, primarily through Blueprints with some C++.
 
-The GitHub project index currently contains only a heading. The portfolio therefore features the verified public RPS game, rather than inventing additional projects. Project descriptions summarize the inspected repository; individual team contributions are not claimed without documentation.
+Both Sparks are listed under GAM 300, following the updated project notes. Add a future GAM 300/350 project to the `projects` array in `src/data.js`; its position in the array determines its gallery position.
 
-The site uses a fixed content snapshot and does not scrape profiles at runtime. No résumé content, PDF, external profile images, or third-party logos are bundled.
+The site contains no analytics, backend, contact form, credentials, external font requests, logos, or initials graphics. The reference screenshots inform layout only; their biography, project descriptions, skills, jobs, and images are not included in the site.
+
+## Checks
+
+The production build, React server rendering, local media and anchor references, and particle-pool behavior were verified. Interactive browser and visual QA could not be performed in the current environment, so check the mobile layout, dialogs, videos, and animation controls locally before publishing.
