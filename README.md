@@ -40,6 +40,8 @@ Vite generates the static site in `dist/`. The included `base: './'` supports de
 
 The email address and expected graduation date are configured in `src/data.js`. Add playable/source URLs to the relevant project to enable those links; leave them empty when unavailable.
 
+The About me panel contains Gregory’s supplied personal blurb verbatim, with only “Scratch” linked to his Scratch project search. Edit its four paragraphs in `profile.about`; the parenthetical linking instruction is not displayed.
+
 The fourth link in the bottom contact section downloads `Gregory-Sherris-Master-Resume.pdf`, below email, LinkedIn, and GitHub. The supplied master résumé is included unchanged; update `profile.resume` and the corresponding file in `public/media/` when replacing it.
 
 The gallery shows two cards at a time on desktop and one on mobile, with arrow controls and native scrolling. Use **View all projects** for a full grid, and filter by custom engines, Unity, or Unreal; filter counts update automatically when you add projects.

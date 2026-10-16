@@ -18,6 +18,19 @@ function CodeSample({ snippet }) {
   );
 }
 
+function AboutParagraph({ text }) {
+  const word = 'Scratch';
+  const index = text.indexOf(word);
+  if (index === -1) return <p>{text}</p>;
+  return (
+    <p>
+      {text.slice(0, index)}
+      <a className="scratch-link" href="https://scratch.mit.edu/search/projects?q=gregsherris">Scratch</a>
+      {text.slice(index + word.length)}
+    </p>
+  );
+}
+
 export function ProjectDialog({ project, onClose }) {
   const dialogRef = useRef(null);
   useEffect(() => {
@@ -205,9 +218,7 @@ export default function App() {
             <article className="info-panel about-panel">
               <h3><span aria-hidden="true">03</span> About me</h3>
               <div className="panel-content">
-                <p>{profile.about[0]}</p>
-                <p>{profile.about[2]}</p>
-                <ExternalLink href={profile.linkedin} className="text-link">Connect on LinkedIn</ExternalLink>
+                {profile.about.map((paragraph, index) => <AboutParagraph key={index} text={paragraph} />)}
               </div>
             </article>
           </div>
@@ -223,7 +234,7 @@ export default function App() {
             <a href={'mailto:' + profile.email}>{profile.email} <span aria-hidden="true">↗</span></a>
             <ExternalLink href={profile.linkedin}>Connect on LinkedIn</ExternalLink>
             <ExternalLink href={profile.github}>Explore my GitHub</ExternalLink>
-            <a href={media(profile.resume)} download={profile.resume}>Download my resume <span aria-hidden="true">↓</span></a>
+            <a href={media(profile.resume)} download={profile.resume}>Download my résumé <span aria-hidden="true">↓</span></a>
           </div>
         </section>
       </main>

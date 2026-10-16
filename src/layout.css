@@ -518,6 +518,14 @@
   color: var(--muted);
   line-height: 1.8;
 }
+.about-panel .scratch-link {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.about-panel .scratch-link:hover {
+  color: #fff;
+}
 
 /* Retain the original code breakdowns and the two interactive studies. */
 .systems-section {

@@ -13,9 +13,10 @@ export const profile = {
   availability: 'Seeking a Summer 2027 internship',
   introduction: 'I’m an RTIS student at DigiPen building gameplay, physics, and the engine systems that turn ideas into playable experiences.',
   about: [
-    'Ive been programming since elementary school, not because its easy, but because it challenges me. Every project has a goal, and every goal has obstacles I must conquer...',
-    'My projects range from custom C and C++ engines to team games in Unity and Unreal Engine 5. I’ve worked alongside programmers, artists, sound designers, and game designers to create games that youll love!',
-    'My first finished team project was Up We Goat, a two-week DigiPen Pre-College game which you can read about here! Since then, I’ve continued building projects at DigiPen, with a growing focus on custom engines and Unreal.',
+    "Hi, I'm Gregory Sherris. If you're reading this, you're probably interested in who I am as a person as well as who I am as a programmer/developer. If you're curious about my past projects/coursework, this portfolio is for that; if you're interested in who I am as a person, I decided to write this short personal blurb about myself.",
+    "Anyways, I have been interested in programming since elementary school, ever since I touched HTML and Scratch in my elementary class; whilst times have changed and I've changed as a person since then, my love for programming has stayed strong throughout the entirety of my education, and I aspire to work in companies so I can develop games so in the future someone else can have the same experience as me.",
+    "Besides programming, I also enjoy rock climbing and other physical activities; I occasionally go on road trips, and I love night walks to clear my mind. As a programmer, I also enjoy video games; a couple I particularly enjoy are Deadlock, Library of Ruina (and the other games by Project Moon), Factorio, and The Binding of Isaac. ",
+    "Anyway, I hope you enjoyed learning about me as much as I enjoyed writing about it. Thanks for stopping by!",
   ],
 };
 

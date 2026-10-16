@@ -11,6 +11,7 @@ The portfolio is usable as supplied. These details would make it more complete:
 
 ## Editorial decisions
 
+- Replaced the About me panel with Gregory’s four supplied personal-blurb paragraphs exactly as written. Only “Scratch” is hyperlinked, and its parenthetical editing instruction is omitted; the separate parenthetical about Project Moon is preserved. The previous assistant-written About me paragraphs and extra LinkedIn prompt were removed, and no new text box was added to the hero.
 - Revised descriptions into concise, professional copy and kept each game’s concept separate from Gregory’s individual contributions.
 - Retained the supplied team changes, development time, engine languages, and public repository URLs. Added both Spark descriptions from the updated notes, and corrected their course to GAM 300; did not invent dates, download URLs, or job experience.
 - Described Goblin Man as remarkably resilient rather than absolutely invincible, because the Bonkera interaction still squashes him.
