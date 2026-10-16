@@ -92,6 +92,7 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [activeProject, setActiveProject] = useState(null);
+  const [aboutExpanded, setAboutExpanded] = useState(false);
   const closeMenu = () => setMenuOpen(false);
 
   useEffect(() => {
@@ -218,7 +219,19 @@ export default function App() {
             <article className="info-panel about-panel">
               <h3><span aria-hidden="true">03</span> About me</h3>
               <div className="panel-content">
-                {profile.about.map((paragraph, index) => <AboutParagraph key={index} text={paragraph} />)}
+                <AboutParagraph text={profile.about[0]} />
+                <div id="about-more" className="about-details" hidden={!aboutExpanded}>
+                  {profile.about.slice(1).map((paragraph, index) => <AboutParagraph key={index} text={paragraph} />)}
+                </div>
+                <button
+                  type="button"
+                  className="text-link about-toggle"
+                  aria-expanded={aboutExpanded}
+                  aria-controls="about-more"
+                  onClick={() => setAboutExpanded(!aboutExpanded)}
+                >
+                  {aboutExpanded ? 'Less…' : 'More…'}
+                </button>
               </div>
             </article>
           </div>
@@ -234,7 +247,7 @@ export default function App() {
             <a href={'mailto:' + profile.email}>{profile.email} <span aria-hidden="true">↗</span></a>
             <ExternalLink href={profile.linkedin}>Connect on LinkedIn</ExternalLink>
             <ExternalLink href={profile.github}>Explore my GitHub</ExternalLink>
-            <a href={media(profile.resume)} download={profile.resume}>Download my résumé <span aria-hidden="true">↓</span></a>
+            <a href={media(profile.resume)} download={profile.resume}>Download my resume <span aria-hidden="true">↓</span></a>
           </div>
         </section>
       </main>

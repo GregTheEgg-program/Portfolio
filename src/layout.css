@@ -432,6 +432,7 @@
 .information-grid {
   display: grid;
   grid-template-columns: 1fr 1.12fr 1fr;
+  align-items: start;
   gap: 24px;
 }
 .info-panel {
@@ -513,10 +514,24 @@
   font: 11px/1.8 Consolas, monospace;
   white-space: normal;
 }
-.about-panel .panel-content > p {
+.about-panel .panel-content p {
   font-size: 13px;
   color: var(--muted);
   line-height: 1.8;
+}
+.about-details:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.about-panel .about-toggle {
+  background: transparent;
+  padding: 4px 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.about-panel .about-toggle:hover {
+  color: #fff;
 }
 .about-panel .scratch-link {
   color: var(--blue);

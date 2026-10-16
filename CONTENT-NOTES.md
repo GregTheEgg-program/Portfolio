@@ -12,6 +12,7 @@ The portfolio is usable as supplied. These details would make it more complete:
 ## Editorial decisions
 
 - Replaced the About me panel with Gregory’s four supplied personal-blurb paragraphs exactly as written. Only “Scratch” is hyperlinked, and its parenthetical editing instruction is omitted; the separate parenthetical about Project Moon is preserved. The previous assistant-written About me paragraphs and extra LinkedIn prompt were removed, and no new text box was added to the hero.
+- About me starts with the first paragraph and a keyboard-accessible More… / Less… button for the remaining text. The three information panels align at the top and keep independent heights, so expanding the blurb does not stretch the adjacent panels.
 - Revised descriptions into concise, professional copy and kept each game’s concept separate from Gregory’s individual contributions.
 - Retained the supplied team changes, development time, engine languages, and public repository URLs. Added both Spark descriptions from the updated notes, and corrected their course to GAM 300; did not invent dates, download URLs, or job experience.
 - Described Goblin Man as remarkably resilient rather than absolutely invincible, because the Bonkera interaction still squashes him.
@@ -25,7 +26,7 @@ The portfolio is usable as supplied. These details would make it more complete:
 - The reference screenshots are not bundled, rendered on the page, or used for content. No biography, job titles, employers, skills, project descriptions, or project images from the reference portfolio were imported.
 - All six current project cards use the supplied thumbnail PNGs. A mechanic-overview fallback remains available for future projects without images; the original trailer posters are kept separately.
 - Up We Goat and Rock, Paper, City now include their supplied trailers in their respective project details. The videos retain the original H.264/AAC streams, with MP4 metadata moved to the front for progressive playback; the existing game thumbnails remain unchanged.
-- The current master résumé PDF is included unchanged and is downloadable as the fourth link in the bottom contact section, after email, LinkedIn, and GitHub. The older tutor-application résumé is not bundled.
+- The current master resume PDF is included unchanged and is downloadable as the fourth link in the bottom contact section, after email, LinkedIn, and GitHub. The download label uses the plain spelling “resume.” The older tutor-application resume is not bundled.
 
 ## Sources and limits
 
