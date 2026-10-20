@@ -3,7 +3,7 @@
 The portfolio is usable as supplied. These details would make it more complete:
 
 - **Spark gameplay media and links:** gameplay screenshots/trailers and any playable or source links for Surfing Poseidon and The Tower. Both now have the supplied thumbnail artwork; their names, premises, three-person teams, engines, and Gregory’s contributions are included under GAM 300.
-- **Game links:** the DigiPen page for Gamblers Never Quit, plus any public build, trailer hosting, or repository for Goblin Man. Add these in `src/data.js`; empty links are not rendered.
+- **Game links:** any public build, trailer hosting, or repository for Goblin Man. Add these in `src/data.js`; empty links are not rendered.
 - **Project timelines:** confirmed project dates and the development time for each Spark. The supplied public email is active, and expected graduation is listed as May 2028.
 - **Performance evidence:** hardware, resolution, particle count, and frame-time/FPS measurements for the 10,000-particle statement. The current wording describes a target, not a measured guarantee, and the browser illustration is not an engine benchmark.
 - **Team credits:** full surnames and optional portfolio links for teammates. Existing first names and initials are preserved as supplied.
@@ -27,6 +27,7 @@ The portfolio is usable as supplied. These details would make it more complete:
 - All six current project cards use the supplied thumbnail PNGs. A mechanic-overview fallback remains available for future projects without images; the original trailer posters are kept separately.
 - Up We Goat and Rock, Paper, City now include their supplied trailers in their respective project details. The videos retain the original H.264/AAC streams, with MP4 metadata moved to the front for progressive playback; the existing game thumbnails remain unchanged.
 - The current master resume PDF is included unchanged and is downloadable as the fourth link in the bottom contact section, after email, LinkedIn, and GitHub. The download label uses the plain spelling “resume.” The older tutor-application resume is not bundled.
+- Gamblers Never Quit’s Play the game button links to the user-supplied DigiPen page at `https://games.digipen.edu/games/quitters-never-win`.
 
 ## Sources and limits
 
