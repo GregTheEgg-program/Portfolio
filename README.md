@@ -4,23 +4,26 @@ A standalone React + Vite portfolio with black backgrounds, white text, purple/b
 
 ## Run locally
 
-Use Node.js 22.12+ (or 20.19+). Open a terminal in this folder:
+Use Node.js 22.12 or later (Node 24 works). Open a terminal in the folder containing `package.json` and `wrangler.jsonc`:
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Open the local URL printed by Vite. The site needs a local server; opening `index.html` directly will not run React.
+Open the local URL printed by Wrangler. This serves the React site and the actual game download routes.
 
-## Production build
+## Deploy with Cloudflare Workers
 
 ```bash
-npm run build
-npm run preview
+npm run deploy:check
 ```
 
-Vite generates the static site in `dist/`. The included `base: './'` supports deployment in a subdirectory, and all media is bundled locally.
+This dry run builds the site and checks the Worker and its static assets without publishing. To test both downloads locally after the build, run `npm run test:downloads`.
+
+For the existing Git-connected Worker, keep the deploy command **`npx wrangler deploy`** and set the root to the folder containing `wrangler.jsonc` (the repository root in this ZIP). Wrangler runs the build itself; a separate dashboard build command is optional. If the Worker in the dashboard has a different name, match the `name` field in `wrangler.jsonc` to it. No bucket, external game host, or new domain is needed.
+
+The Worker and the contents of `dist/` deploy together. For someone upgrading the previous GitHub repository, the existing full ZIPs in `public/downloads/` may stay: the build splits the generated copies and keeps the oversized files out of the deployment. A fresh copy of the full v12 package already has the seven required parts.
 
 ## Edit the site
 
@@ -36,7 +39,10 @@ Vite generates the static site in `dist/`. The included `base: './'` supports de
 | `src/layout.css` | Framed navigation, hero, gallery, three-panel layout, and responsive overrides |
 | `src/bonkera.css` | Top-down grow/rotate/shrink stomp animation and project-demo layout |
 | `public/media/` | Photograph, trailers, posters, sprites, and the current resume PDF |
-| `public/downloads/` | The original Up We Goat and Rock Paper City game ZIPs |
+| `public/downloads/parts/` | The original game bytes in seven parts, each at most 16 MiB |
+| `cloudflare/worker.mjs` | Streams each game's parts in order as one ZIP attachment |
+| `cloudflare/games.mjs` | Exact filenames, byte lengths, part size, and SHA-256 checksums |
+| `scripts/prepare-downloads.mjs` | Prepares and verifies both games and checks every deployable asset against the Workers size limit |
 | `index.html` | Page title and search description |
 | `CONTENT-NOTES.md` | Missing details, editorial decisions, and verification limits |
 
@@ -46,7 +52,7 @@ The About me panel contains Gregory’s supplied personal blurb verbatim, with o
 
 The fourth link in the bottom contact section downloads `Gregory-Sherris-Master-Resume.pdf`, below email, LinkedIn, and GitHub. The supplied master resume is included unchanged; update `profile.resume` and the corresponding file in `public/media/` when replacing it.
 
-Up We Goat and Rock, Paper, City each have a **Download game (ZIP)** button on their card and near the top of their project details, replacing their project GitHub links. Each button displays its filename and size. The supplied `UpWeGoat.zip` and `RockPaperCity.zip` are bundled unchanged in `public/downloads/`; update the corresponding project's `download` and `downloadSize` fields in `src/data.js` when replacing a build.
+Up We Goat and Rock, Paper, City each have a **Download game (ZIP)** button on their card and in their project details. The URLs still end in `/downloads/UpWeGoat.zip` and `/downloads/RockPaperCity.zip`. Visitors receive one original Windows game ZIP per click. The Worker streams its parts without holding the whole game in memory. To replace a build, remove that game's old parts, place the new original in `public/downloads/`, and update the length and SHA-256 in `cloudflare/games.mjs` and the size label in `src/data.js`.
 
 The gallery shows two cards at a time on desktop and one on mobile, with arrow controls and native scrolling. Use **View all projects** for a full grid, and filter by custom engines, Unity, or Unreal; filter counts update automatically when you add projects.
 
@@ -69,8 +75,8 @@ Goblin Man, Gamblers Never Quit, Up We Goat, and Rock, Paper, City have embedded
 
 Both Sparks are listed under GAM 300, following the updated project notes. Add a future GAM 300/350 project to the `projects` array in `src/data.js`; its position in the array determines its gallery position.
 
-The site contains no analytics, backend, contact form, credentials, external font requests, personal logos, or initials graphics. Supplied game artwork is used for the project thumbnails. The reference screenshots inform layout only; their biography, project descriptions, skills, jobs, and images are not included in the site.
+The Worker serves the site and its downloads. The site contains no analytics, database, contact form, credentials, external font requests, personal logos, or initials graphics. Supplied game artwork is used for the project thumbnails. The reference screenshots inform layout only; their biography, project descriptions, skills, jobs, and images are not included in the site.
 
 ## Checks
 
-The production build, React server rendering, local media and anchor references, and particle-pool behavior were verified. The revised Up We Goat and Rock, Paper, City buttons were clicked in a desktop browser and both ZIP downloads completed; the revised project details were also checked visually. Check the mobile layout, video playback, and animation controls locally before publishing.
+For v12, a Wrangler deployment dry run and both download routes were tested in the local Cloudflare runtime. Both responses had their original filenames and byte lengths and matched the original uploads by SHA-256. The existing gallery buttons, trailers, and About me content are unchanged.

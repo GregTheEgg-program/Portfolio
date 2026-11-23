@@ -28,7 +28,7 @@ The portfolio is usable as supplied. These details would make it more complete:
 - Up We Goat and Rock, Paper, City now include their supplied trailers in their respective project details. The videos retain the original H.264/AAC streams, with MP4 metadata moved to the front for progressive playback; the existing game thumbnails remain unchanged.
 - The current master resume PDF is included unchanged and is downloadable as the fourth link in the bottom contact section, after email, LinkedIn, and GitHub. The download label uses the plain spelling “resume.” The older tutor-application resume is not bundled.
 - Gamblers Never Quit’s Play the game button links to the user-supplied DigiPen page at `https://games.digipen.edu/games/quitters-never-win`.
-- Up We Goat and Rock, Paper, City use direct game ZIP downloads in place of their project GitHub links. The user-supplied `UpWeGoat.zip` and `RockPaperCity.zip` are bundled unchanged in `public/downloads/`. Download controls appear on the cards and near the top of the details, with each file's name and size. The profile GitHub links remain available in the navigation and contact section.
+- Up We Goat and Rock, Paper, City use direct game ZIP downloads in place of their project GitHub links. The user-supplied archives are served byte-for-byte from smaller assets so the site fits the Workers static-file limit. Download controls appear on the cards and near the top of the details, with each file's name and size. The profile GitHub links remain available in navigation and contact.
 
 ## Sources and limits
 
@@ -36,4 +36,4 @@ Primary sources: the attached `Pasted text.txt`, updated `Pasted text(1).txt`, G
 
 The public Up We Goat repository’s `Assets`, `Packages`, and `ProjectSettings` directories were also checked through GitHub to confirm the Unity project structure.
 
-The original game implementations were not changed or audited. The website’s asset references, React output, production build, and bounded particle simulation were checked locally. The revised download buttons were clicked in a desktop browser, both game downloads completed, and the new button placement was inspected visually. The bundled and production game ZIPs were checked against the original uploads. Mobile layout, video playback, and animation controls still need local review.
+The original game implementations were not changed or audited. The gallery download buttons were checked in a desktop browser in v11. In v12, both ZIP responses were checked in the local Workers runtime against the byte lengths and SHA-256 checksums of the original uploads; a Wrangler dry run verified the deployable package.

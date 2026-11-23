@@ -1,14 +1,19 @@
-Game downloads update — revision 11
+Revision 12 — Cloudflare Workers game downloads
 
-Up We Goat: public/downloads/UpWeGoat.zip
-Rock Paper City: public/downloads/RockPaperCity.zip
+For the existing Git-connected Worker:
+1. Extract the files alongside the repository's package.json. If using the
+   small repair ZIP, keep the existing src/, public/, and game ZIPs.
+2. Check the Worker name in your Cloudflare dashboard. If it differs from
+   gregory-sherris-portfolio, set name in wrangler.jsonc to the existing name.
+3. Commit and push the extracted files. Use the repository root in Workers
+   Builds and keep its deploy command as: npx wrangler deploy
 
-Each game has a Download game (ZIP) button on its project card and near
-the top of its project details. These replace the project GitHub links.
-The original game ZIPs are included unchanged.
+Local verification (Node 22.12+ or 24):
+  npm ci
+  npm run deploy:check
+  npm run test:downloads
 
-This revision adds src/GameDownload.jsx and shows each game's ZIP filename
-and file size next to its download button.
-
-Run npm install, then npm run dev to view the React site locally.
-Run npm run build and upload the contents of dist/ to update your hosted site.
+The complete edition ships 16 MiB parts. The repair also works with the
+previous complete ZIPs: the build splits them automatically. Each visitor
+still downloads one original UpWeGoat.zip or RockPaperCity.zip. The Worker
+script and the static assets must be deployed together.
