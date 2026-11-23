@@ -17,7 +17,8 @@ try {
     assert.equal(head.headers.get('content-length'), String(game.bytes));
     const response = await server.fetch(path);
     assert.equal(response.status, 200);
-    assert.equal(response.headers.get('content-type'), 'application/zip');
+    const isInstaller = game.file.endsWith('.exe');
+    assert.equal(response.headers.get('content-type'), isInstaller ? 'application/octet-stream' : 'application/zip');
     assert.equal(response.headers.get('content-disposition'), `attachment; filename="${game.file}"`);
     assert.equal(response.headers.get('content-length'), String(game.bytes));
     const hash = createHash('sha256');

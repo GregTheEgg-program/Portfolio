@@ -17,7 +17,7 @@ for (const game of games) {
   const oldLocations = ['downloads', 'media'].map(dir => join(dist, dir, game.file));
   if (!parts.every(part => existsSync(output(part)))) {
     const original = oldLocations.find(path => existsSync(path));
-    if (!original) throw new Error(`Missing parts or original ZIP for ${game.file}`);
+    if (!original) throw new Error(`Missing parts or original file for ${game.file}`);
     const archive = await readFile(original);
     if (archive.length !== game.bytes) throw new Error(`Unexpected file size: ${game.file}`);
     let offset = 0;
@@ -33,7 +33,7 @@ for (const game of games) {
     if (bytes.length !== part.bytes) throw new Error(`Wrong part size: ${part.path}`);
     hash.update(bytes);
   }
-  if (hash.digest('hex') !== game.sha256) throw new Error(`Game ZIP integrity check failed: ${game.file}`);
+  if (hash.digest('hex') !== game.sha256) throw new Error(`Game download integrity check failed: ${game.file}`);
   for (const path of oldLocations) await rm(path, { force: true });
   console.log(`${game.file}: ${parts.length} parts verified`);
 }

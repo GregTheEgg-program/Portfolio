@@ -1,0 +1,33 @@
+Gregory Sherris portfolio — Windows downloads (v13 add-on)
+
+In the existing portfolio repository, Up We Goat and Rock, Paper, City each
+get a Windows installer button and a second link to the original portable ZIP.
+No game source repository or GitHub account is required to play.
+
+Apply to the portfolio:
+1. Extract this update into the existing folder containing package.json.
+   Keep src/, public/, and the existing game ZIPs or their v12 parts.
+2. In wrangler.jsonc, keep the name of your existing Cloudflare Worker.
+   If you customized the old config, merge the four download routes in the
+   assets.run_worker_first setting and keep your own unrelated settings.
+3. Commit the extracted files and push. Keep the deploy command
+   npx wrangler deploy. The five included .bin files are the installers;
+   the standalone .exe downloads do not also need to go in the repository.
+
+Each offline installer installs the game for the current Windows user, creates
+a Start menu shortcut, and includes an uninstaller. Administrator rights are
+not requested. Both are unsigned. The portable ZIPs are the original uploads.
+
+Game                Portable ZIP     Windows installer
+Up We Goat             50.7 MiB              33.9 MiB
+Rock, Paper, City      44.1 MiB              30.8 MiB
+
+Cloudflare serves each choice as one file to the visitor. Behind the scenes,
+the Worker streams it from parts of at most 16 MiB. The build checks their
+sizes and SHA-256 hashes. This add-on works with either the original games
+in v11 or the verified parts in v12. It does not change the game source.
+
+Local checks (Node 22.12+ or 24):
+  npm ci
+  npm run deploy:check
+  npm run test:downloads

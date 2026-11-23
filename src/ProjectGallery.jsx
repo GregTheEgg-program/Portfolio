@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { media, projects } from './data.js';
 import GameDownload from './GameDownload.jsx';
+import GamePageLink from './GamePageLink.jsx';
 
 const filters = [
   { id: 'all', label: 'All projects' },
@@ -60,6 +61,7 @@ function ProjectCard({ project, index, onOpen }) {
             {project.title}<span aria-hidden="true">↗</span>
           </button>
         </h3>
+        <GamePageLink project={project} />
         <p className="project-summary">{project.summary}</p>
         <div className="my-contribution">
           <span className="tiny-label">MY CONTRIBUTION</span>

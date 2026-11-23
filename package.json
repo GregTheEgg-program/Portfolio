@@ -8,6 +8,7 @@
     "build": "vite build && node scripts/prepare-downloads.mjs",
     "preview": "wrangler dev --local",
     "deploy:check": "wrangler deploy --dry-run",
+    "import:tower": "node scripts/import-tower.mjs",
     "test:downloads": "node scripts/check-worker.mjs"
   },
   "dependencies": {

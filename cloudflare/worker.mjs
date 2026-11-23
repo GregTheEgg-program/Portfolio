@@ -20,7 +20,8 @@ export default {
       return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
     }
     const headers = {
-      'Content-Type': 'application/zip',
+      'Content-Type': game.file.endsWith('.zip') ? 'application/zip' : 'application/octet-stream',
+      'X-Content-Type-Options': 'nosniff',
       'Content-Disposition': `attachment; filename="${game.file}"`,
       'Content-Length': String(game.bytes),
       'Accept-Ranges': 'none',
@@ -36,7 +37,7 @@ export default {
       return new Response('Download unavailable', { status: 503 });
     }
     // FixedLengthStream lets the browser track download progress. Piping one
-    // part at a time also keeps the full ZIP out of Worker memory.
+    // part at a time also keeps the full download out of Worker memory.
     const { readable, writable } = new FixedLengthStream(game.bytes);
     ctx.waitUntil((async () => {
       try {

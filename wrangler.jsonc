@@ -10,6 +10,10 @@
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
-    "run_worker_first": ["/downloads/UpWeGoat.zip", "/downloads/RockPaperCity.zip"]
+    "run_worker_first": [
+      "/downloads/UpWeGoat.zip", "/downloads/RockPaperCity.zip",
+      "/downloads/SurfingPoseidon.zip", "/downloads/TheTower.zip",
+      "/downloads/UpWeGoat-Windows-Setup.exe", "/downloads/RockPaperCity-Windows-Setup.exe"
+    ]
   }
 }

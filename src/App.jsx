@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { media, profile, projects, skills, snippets } from './data.js';
 import ProjectGallery from './ProjectGallery.jsx';
 import GameDownload from './GameDownload.jsx';
+import GamePageLink from './GamePageLink.jsx';
 import { BonkeraDemo, ParticleDemo } from './Demos.jsx';
 
 function ExternalLink({ href, children, className = '' }) {
@@ -52,6 +53,7 @@ export function ProjectDialog({ project, onClose }) {
         <div className="dialog-body">
           <p className="eyebrow">PROJECT BREAKDOWN</p>
           <h2 id="project-dialog-title">{project.title}</h2>
+          <GamePageLink project={project} />
           <p className="dialog-intro">{project.introduction}</p>
           <GameDownload project={project} />
           <dl className="project-facts">
@@ -81,7 +83,6 @@ export function ProjectDialog({ project, onClose }) {
           {project.teams && <details className="team-details"><summary>Team credits</summary>{project.teams.map((team) => <p key={team.label}><strong>{team.label}</strong>{team.people}</p>)}</details>}
           <div className="dialog-links">
             {project.repository && <ExternalLink className="button primary" href={project.repository}>View source on GitHub</ExternalLink>}
-            {project.playUrl && <ExternalLink className="button primary" href={project.playUrl}>Play the game</ExternalLink>}
             <button type="button" className="button secondary" onClick={onClose}>Back to portfolio <span aria-hidden="true">↙</span></button>
           </div>
         </div>

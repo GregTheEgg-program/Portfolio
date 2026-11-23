@@ -62,6 +62,7 @@ export const projects = [
     poster: 'gamblers-never-quit-poster.jpg',
     trailer: 'gamblers-never-quit-trailer.mp4', trailerLabel: 'Gamblers Never Quit trailer, 32 seconds', trailerDuration: '32 seconds',
     playUrl: 'https://games.digipen.edu/games/quitters-never-win',
+    playLabel: 'Get the game on DigiPen',
     summary: 'An incremental game built around casino-style minigames: earn more, raise the stakes, and see how far your score can go.',
     contribution: 'I developed the action list system and the slots scene in a custom C engine.',
     introduction: 'Created during my second semester at DigiPen, Gamblers Never Quit lets players build their score through a collection of casino-style games. Increasing winnings makes larger bets possible, creating a simple loop of risk and progression.',
@@ -75,6 +76,7 @@ export const projects = [
   },
   {
     id: 'surfing-poseidon', title: 'Surfing Poseidon', category: 'unity',
+    download: 'SurfingPoseidon.zip',
     image: 'SurfingPosiedonLogo.png', imageWidth: 250, imageHeight: 198,
     imageAlt: 'Surfing Poseidon game thumbnail',
     course: 'GAM 300 · Spark 01', type: 'Game jam',
@@ -93,6 +95,7 @@ export const projects = [
   },
   {
     id: 'the-tower', title: 'The Tower', category: 'unreal',
+    download: 'TheTower.zip',
     image: 'TheTowerLogo.png', imageWidth: 823, imageHeight: 798,
     imageAlt: 'The Tower game thumbnail',
     course: 'GAM 300 · Spark 02', type: 'Game jam',

@@ -2,7 +2,7 @@
 
 The portfolio is usable as supplied. These details would make it more complete:
 
-- **Spark gameplay media and links:** gameplay screenshots/trailers and any playable or source links for Surfing Poseidon and The Tower. Both now have the supplied thumbnail artwork; their names, premises, three-person teams, engines, and Gregory’s contributions are included under GAM 300.
+- **Spark builds and media:** The Tower’s packaged Windows build is needed to publish its download. Surfing Poseidon’s Windows build is included. Screenshots/trailers for either Spark can be added later. Both now have the supplied thumbnail artwork; their names, premises, three-person teams, engines, and Gregory’s contributions are included under GAM 300.
 - **Game links:** any public build, trailer hosting, or repository for Goblin Man. Add these in `src/data.js`; empty links are not rendered.
 - **Project timelines:** confirmed project dates and the development time for each Spark. The supplied public email is active, and expected graduation is listed as May 2028.
 - **Performance evidence:** hardware, resolution, particle count, and frame-time/FPS measurements for the 10,000-particle statement. The current wording describes a target, not a measured guarantee, and the browser illustration is not an engine benchmark.
@@ -27,8 +27,8 @@ The portfolio is usable as supplied. These details would make it more complete:
 - All six current project cards use the supplied thumbnail PNGs. A mechanic-overview fallback remains available for future projects without images; the original trailer posters are kept separately.
 - Up We Goat and Rock, Paper, City now include their supplied trailers in their respective project details. The videos retain the original H.264/AAC streams, with MP4 metadata moved to the front for progressive playback; the existing game thumbnails remain unchanged.
 - The current master resume PDF is included unchanged and is downloadable as the fourth link in the bottom contact section, after email, LinkedIn, and GitHub. The download label uses the plain spelling “resume.” The older tutor-application resume is not bundled.
-- Gamblers Never Quit’s Play the game button links to the user-supplied DigiPen page at `https://games.digipen.edu/games/quitters-never-win`.
-- Up We Goat and Rock, Paper, City use direct game ZIP downloads in place of their project GitHub links. The user-supplied archives are served byte-for-byte from smaller assets so the site fits the Workers static-file limit. Download controls appear on the cards and near the top of the details, with each file's name and size. The profile GitHub links remain available in navigation and contact.
+- Gamblers Never Quit’s prominent Get the game on DigiPen button directly beneath the card and dialog titles links to the user-supplied DigiPen page at `https://games.digipen.edu/games/quitters-never-win`.
+- Up We Goat and Rock, Paper, City offer offline installers and their original ZIP downloads. The user-supplied archives are served byte-for-byte from smaller assets so the site fits the Workers static-file limit. Download controls appear on the cards and near the top of the details, with each file's name and size. The profile GitHub links remain available in navigation and contact.
 
 ## Sources and limits
 

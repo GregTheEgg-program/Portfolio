@@ -378,6 +378,22 @@
   gap: 10px;
   margin-top: 24px;
 }
+.game-page-link.button.primary {
+  align-self: flex-start;
+  justify-content: center;
+  min-height: 44px;
+  max-width: 100%;
+  margin: 0 0 12px;
+  padding: 10px 18px;
+  border: 1px solid #c9b6ff;
+  background: #ccb9ff;
+  color: #170f29;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: normal;
+}
+.game-page-link.button.primary:hover { background: #e2d7ff; color: #120d1a; }
+.game-page-link.button.primary:focus-visible { outline: 3px solid #8acbff; outline-offset: 3px; }
 .game-download .button {
   max-width: 100%;
   min-height: 44px;

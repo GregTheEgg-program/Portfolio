@@ -1,19 +1,26 @@
-Revision 12 — Cloudflare Workers game downloads
+Gregory Sherris portfolio — Cloudflare game downloads, v14
 
-For the existing Git-connected Worker:
-1. Extract the files alongside the repository's package.json. If using the
-   small repair ZIP, keep the existing src/, public/, and game ZIPs.
-2. Check the Worker name in your Cloudflare dashboard. If it differs from
-   gregory-sherris-portfolio, set name in wrangler.jsonc to the existing name.
-3. Commit and push the extracted files. Use the repository root in Workers
-   Builds and keep its deploy command as: npx wrangler deploy
+In the existing portfolio repository, extract this update next to package.json.
+Keep the original game files already in public/downloads/ or public/downloads/parts/.
+If you have a custom Cloudflare Worker name, retain it in wrangler.jsonc.
+Commit and push the extracted files. Keep the deploy command: npx wrangler deploy
 
-Local verification (Node 22.12+ or 24):
-  npm ci
+Surfing Poseidon: visitors get a single portable Windows ZIP (63.4 MiB).
+Extract it and run SurfingPoseidon/Practise.exe. Its game files have not been modified.
+The optional Unity build-debug folder marked DoNotShip was omitted.
+Gamblers Never Quit: the DigiPen button is directly below the title on the
+project card and in its details. Up We Goat and Rock, Paper, City each have
+a smaller Windows installer and their original portable ZIP.
+
+To add The Tower, use a ZIP of the packaged Windows game, not the Unreal source folder.
+From the folder containing package.json run:
+  npm run import:tower -- "path/to/TheTower.zip"
   npm run deploy:check
   npm run test:downloads
+Commit cloudflare/tower-release.json and the generated public/downloads/parts/
+files and push. You do not need to commit the large input ZIP. Once imported,
+The Tower's card and details display the real ZIP's size and download button.
 
-The complete edition ships 16 MiB parts. The repair also works with the
-previous complete ZIPs: the build splits them automatically. Each visitor
-still downloads one original UpWeGoat.zip or RockPaperCity.zip. The Worker
-script and the static assets must be deployed together.
+Every game is served through the portfolio itself. The Worker streams stored
+pieces of at most 16 MiB as one file; the build also rejects any static asset
+over 25 MiB. You do not need to publish your private game source repositories.
