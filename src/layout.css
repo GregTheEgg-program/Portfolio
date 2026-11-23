@@ -371,6 +371,32 @@
 .project-open {
   font-size: 11px;
 }
+.game-download {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 24px;
+}
+.game-download .button {
+  max-width: 100%;
+  min-height: 44px;
+  padding: 12px 18px;
+  font-size: 14px;
+  white-space: normal;
+}
+.game-download > span {
+  color: var(--muted);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.project-card-copy > .game-download {
+  padding-top: 20px;
+  border-top: 1px solid #514164;
+}
+.dialog-body > .game-download {
+  margin-bottom: 28px;
+}
 .project-schematic,
 .project-schematic:hover {
   background: #090610;

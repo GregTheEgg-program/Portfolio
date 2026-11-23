@@ -14,7 +14,7 @@ The portfolio is usable as supplied. These details would make it more complete:
 - Replaced the About me panel with Gregory’s four supplied personal-blurb paragraphs exactly as written. Only “Scratch” is hyperlinked, and its parenthetical editing instruction is omitted; the separate parenthetical about Project Moon is preserved. The previous assistant-written About me paragraphs and extra LinkedIn prompt were removed, and no new text box was added to the hero.
 - About me starts with the first paragraph and a keyboard-accessible More… / Less… button for the remaining text. The three information panels align at the top and keep independent heights, so expanding the blurb does not stretch the adjacent panels.
 - Revised descriptions into concise, professional copy and kept each game’s concept separate from Gregory’s individual contributions.
-- Retained the supplied team changes, development time, engine languages, and public repository URLs. Added both Spark descriptions from the updated notes, and corrected their course to GAM 300; did not invent dates, download URLs, or job experience.
+- Retained the supplied team changes, development time, engine languages, and profile links. Added both Spark descriptions from the updated notes, and corrected their course to GAM 300; did not invent dates, download URLs, or job experience.
 - Described Goblin Man as remarkably resilient rather than absolutely invincible, because the Bonkera interaction still squashes him.
 - Removed informal/profane code comments. Code samples are labeled as abridged or adapted, with original project identifiers largely preserved; they are presentation excerpts, not complete engine source files.
 - Both interactive demonstrations are contained in the Goblin Man project breakdown and are not rendered on the home page or in other projects. Their animation and canvas resources are cleaned up when the project closes.
@@ -28,6 +28,7 @@ The portfolio is usable as supplied. These details would make it more complete:
 - Up We Goat and Rock, Paper, City now include their supplied trailers in their respective project details. The videos retain the original H.264/AAC streams, with MP4 metadata moved to the front for progressive playback; the existing game thumbnails remain unchanged.
 - The current master resume PDF is included unchanged and is downloadable as the fourth link in the bottom contact section, after email, LinkedIn, and GitHub. The download label uses the plain spelling “resume.” The older tutor-application resume is not bundled.
 - Gamblers Never Quit’s Play the game button links to the user-supplied DigiPen page at `https://games.digipen.edu/games/quitters-never-win`.
+- Up We Goat and Rock, Paper, City use direct game ZIP downloads in place of their project GitHub links. The user-supplied `UpWeGoat.zip` and `RockPaperCity.zip` are bundled unchanged in `public/downloads/`. Download controls appear on the cards and near the top of the details, with each file's name and size. The profile GitHub links remain available in the navigation and contact section.
 
 ## Sources and limits
 
@@ -35,4 +36,4 @@ Primary sources: the attached `Pasted text.txt`, updated `Pasted text(1).txt`, G
 
 The public Up We Goat repository’s `Assets`, `Packages`, and `ProjectSettings` directories were also checked through GitHub to confirm the Unity project structure.
 
-The original game implementations were not changed or audited. The website’s asset references, React output, production build, and bounded particle simulation were checked locally. Browser-based visual and interaction QA was unavailable in this environment; inspect the layout and controls after running locally.
+The original game implementations were not changed or audited. The website’s asset references, React output, production build, and bounded particle simulation were checked locally. The revised download buttons were clicked in a desktop browser, both game downloads completed, and the new button placement was inspected visually. The bundled and production game ZIPs were checked against the original uploads. Mobile layout, video playback, and animation controls still need local review.

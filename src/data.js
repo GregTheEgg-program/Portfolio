@@ -1,5 +1,6 @@
 // Editable portfolio content. Asset paths support subdirectory hosting.
 export const media = (name) => `${import.meta.env.BASE_URL}media/${name}`;
+export const downloadFile = (name) => `${import.meta.env.BASE_URL}downloads/${name}`;
 
 export const profile = {
   name: 'Gregory Sherris',
@@ -117,7 +118,8 @@ export const projects = [
     course: 'DigiPen Pre-College', type: 'Team game',
     stack: ['Unity', 'C#', 'Platforming'], role: 'One of two programmers',
     teamSize: '6 people', duration: '2 weeks',
-    repository: 'https://github.com/DreamDoggo/Up-We-Goat',
+    download: 'UpWeGoat.zip',
+    downloadSize: '53.2 MB',
     focusSteps: ['Climb', 'Dodge', 'Eat'],
     summary: 'Climb higher, dodge obstacles, and keep eating on a goat’s ambitious journey to the top.',
     contribution: 'I implemented obstacles, platforms, and many of the particle effects, and helped develop the initial concept.',
@@ -136,7 +138,8 @@ export const projects = [
     course: 'Team project', type: 'Unity game',
     stack: ['Unity', 'C#', 'AI & combat'], role: 'One of two programmers',
     teamSize: 'Multidisciplinary team', duration: '',
-    repository: 'https://github.com/GregTheEgg-program/RPS',
+    download: 'RockPaperCity.zip',
+    downloadSize: '46.2 MB',
     focusSteps: ['Choose', 'Combine', 'Counter'],
     summary: 'Rock, paper, scissors becomes a tactical duel where move combinations unlock abilities, and your opponent plans combinations of its own.',
     contribution: 'I programmed enemy AI, combat resolution, and the attack-combination system.',

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { media, projects } from './data.js';
+import GameDownload from './GameDownload.jsx';
 
 const filters = [
   { id: 'all', label: 'All projects' },
@@ -77,6 +78,7 @@ function ProjectCard({ project, index, onOpen }) {
             Details <span aria-hidden="true">↗</span>
           </button>
         </div>
+        <GameDownload project={project} />
       </div>
     </article>
   );

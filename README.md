@@ -29,12 +29,14 @@ Vite generates the static site in `dist/`. The included `base: './'` supports de
 | `src/data.js` | Biography, project descriptions, links, team credits, skills, and code samples |
 | `src/App.jsx` | Navigation, portrait hero, information panels, native project dialogs, and page structure |
 | `src/ProjectGallery.jsx` | Six project cards, engine filters, carousel arrows, and the all-projects grid |
+| `src/GameDownload.jsx` | Shared ZIP download button and filename/size label for game cards and details |
 | `src/Demos.jsx` | Particle controls and top-down Bonkera scene, shown inside Goblin Man |
 | `src/particleEngine.js` | Bounded reusable particle pool for the browser illustration |
 | `src/styles.css` | Shared styles for components and dialogs |
 | `src/layout.css` | Framed navigation, hero, gallery, three-panel layout, and responsive overrides |
 | `src/bonkera.css` | Top-down grow/rotate/shrink stomp animation and project-demo layout |
 | `public/media/` | Photograph, trailers, posters, sprites, and the current resume PDF |
+| `public/downloads/` | The original Up We Goat and Rock Paper City game ZIPs |
 | `index.html` | Page title and search description |
 | `CONTENT-NOTES.md` | Missing details, editorial decisions, and verification limits |
 
@@ -43,6 +45,8 @@ The email address and expected graduation date are configured in `src/data.js`. 
 The About me panel contains Gregory’s supplied personal blurb verbatim, with only “Scratch” linked to his Scratch project search. It shows the first paragraph initially; **More…** reveals the remaining three paragraphs and **Less…** collapses them. Each information panel keeps its own height. Edit the four paragraphs in `profile.about`; the parenthetical linking instruction is not displayed.
 
 The fourth link in the bottom contact section downloads `Gregory-Sherris-Master-Resume.pdf`, below email, LinkedIn, and GitHub. The supplied master resume is included unchanged; update `profile.resume` and the corresponding file in `public/media/` when replacing it.
+
+Up We Goat and Rock, Paper, City each have a **Download game (ZIP)** button on their card and near the top of their project details, replacing their project GitHub links. Each button displays its filename and size. The supplied `UpWeGoat.zip` and `RockPaperCity.zip` are bundled unchanged in `public/downloads/`; update the corresponding project's `download` and `downloadSize` fields in `src/data.js` when replacing a build.
 
 The gallery shows two cards at a time on desktop and one on mobile, with arrow controls and native scrolling. Use **View all projects** for a full grid, and filter by custom engines, Unity, or Unreal; filter counts update automatically when you add projects.
 
@@ -69,4 +73,4 @@ The site contains no analytics, backend, contact form, credentials, external fon
 
 ## Checks
 
-The production build, React server rendering, local media and anchor references, and particle-pool behavior were verified. Interactive browser and visual QA could not be performed in the current environment, so check the mobile layout, dialogs, videos, and animation controls locally before publishing.
+The production build, React server rendering, local media and anchor references, and particle-pool behavior were verified. The revised Up We Goat and Rock, Paper, City buttons were clicked in a desktop browser and both ZIP downloads completed; the revised project details were also checked visually. Check the mobile layout, video playback, and animation controls locally before publishing.

@@ -1,0 +1,14 @@
+Game downloads update — revision 11
+
+Up We Goat: public/downloads/UpWeGoat.zip
+Rock Paper City: public/downloads/RockPaperCity.zip
+
+Each game has a Download game (ZIP) button on its project card and near
+the top of its project details. These replace the project GitHub links.
+The original game ZIPs are included unchanged.
+
+This revision adds src/GameDownload.jsx and shows each game's ZIP filename
+and file size next to its download button.
+
+Run npm install, then npm run dev to view the React site locally.
+Run npm run build and upload the contents of dist/ to update your hosted site.

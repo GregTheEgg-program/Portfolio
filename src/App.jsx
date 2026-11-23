@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { media, profile, projects, skills, snippets } from './data.js';
 import ProjectGallery from './ProjectGallery.jsx';
+import GameDownload from './GameDownload.jsx';
 import { BonkeraDemo, ParticleDemo } from './Demos.jsx';
 
 function ExternalLink({ href, children, className = '' }) {
@@ -52,6 +53,7 @@ export function ProjectDialog({ project, onClose }) {
           <p className="eyebrow">PROJECT BREAKDOWN</p>
           <h2 id="project-dialog-title">{project.title}</h2>
           <p className="dialog-intro">{project.introduction}</p>
+          <GameDownload project={project} />
           <dl className="project-facts">
             <div><dt>My role</dt><dd>{project.role}</dd></div>
             <div><dt>Team</dt><dd>{project.teamSize}</dd></div>
